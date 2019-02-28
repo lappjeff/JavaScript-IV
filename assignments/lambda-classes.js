@@ -25,8 +25,9 @@ class Instructor extends Person  {
         return `${student} received a perfect score on ${subject}`
     }
     gradeStudent (target) {
-        target.grade = target.grade += Math.round(Math.random()) * 10 - 8;
-        console.log(target.grade)
+        const gradeChange = Math.round(Math.random()) * 10 - 8;
+        target.grade = target.grade +=  gradeChange;
+        return (`${target.name}'s grade has been changed by ${gradeChange} points to a new total of ${target.grade}`)
     }
 }
 
@@ -107,7 +108,7 @@ console.log(josh.speak())
 console.log(josh.demo('JS'))
 console.log(josh.grade('Mario', 'Shell-stomping'))
 //why is mario.listSubjects returning 'undefined' after it runs?
-console.log(mario.listSubjects())
+mario.listSubjects()
 console.log(mario.PRAssignment('JS'))
 console.log(mario.sprintChallenge('CSS'))
 console.log(luigi.standUp('Conquer 101'))
